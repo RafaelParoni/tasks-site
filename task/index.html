@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon"  type="x-icon" href="./icons/favicon.ico">
+    <title>Tasks</title>
+</head>
+<body onload="LoadTask()">
+    <div class="center">
+        <div class="box">
+            <legend>Crie uma tarefa</legend>
+            <div class="top">
+                <button id="btn" onclick="TasksPage('new')"> </button>
+            </div>
+            <div>
+                <legend class="subLegend">Tasks:</legend>
+                <div id="tasks" >               
+                
+                </div>
+            </div>
+        </div>
+        <div class="TasksPage" id="TasksPage">
+            <div id="TaskInfo">
+                <input type="hidden" value="" id="TaskID">
+                <legend id="title"></legend>
+                <div class="centerInput" id="TitleEdit">
+                    <input type="text" placeholder="Titulo(obrigatório*)" value=" " required autocomplete="off"  id="titleInput">
+                 </div>
+                <div class="centerInput">
+                    <textarea style="resize: none" placeholder="Descrição" id="descri" value=""  ></textarea> 
+                 </div>
+                 <div class="centerInput color" id="ColorEdit">
+                    <label for="color">Escolha uma cor:</label>
+                    <input type="color" name="color" id="colorInput">
+                 </div>
+                 <div class="centerInput">
+                    <button id="closeTaskButton" onclick="TasksPage('closeTask')" onmouseenter="verificTask('close')"></button>
+                    <button id="EditTaskButton" onclick="TasksPage('edit')" onmouseenter="verificTask('update')"></button>
+                    <button id="DeletTaskButton" onclick="TasksPage('delet')" onmouseenter="verificTask('delet')"></button>
+                 </div>
+            </div>
+            <div id="NewTask">
+                <a onclick="TasksPage('close')">X</a>
+                <legend>Criar uma nova tarefa!</legend>
+                <div class="centerInput">
+                   <input type="text" placeholder="Titulo(obrigatório*)" required autocomplete="off" id="NewTasktitle">
+                </div>
+                <div class="centerInput">
+                    <textarea style="resize: none" placeholder="Descrição" id="NewDescri" ></textarea> 
+                 </div>
+                 <div class="centerInput color">
+                    <label for="color">Escolha uma cor:</label>
+                    <input type="color" name="color" id="color">
+                 </div>
+                 <div class="centerInput">
+                    <button id="CreateTaskButton" onclick="CreateTask()" onmouseenter="testTask()"></button>
+                 </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
